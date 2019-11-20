@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+		<bean id="item1" class="com.cognizant.truyum.model.MenuItem">
+			<property name="id" value="1" />
+			<property name="name" value="Sandwiches" />
+			<property name="price" value="99.00"></property>
+			<property name="active" value="true"></property>
+			<property name="dateOfLaunch">
+				<bean id="dateFormat" class="com.cognizant.truyum.util.DateUtil"
+				factory-method="convertToDate">
+                     <constructor-arg value="2017-03-15 01:00:00"/>
+                </bean>				
+			</property>
+			<property name="category" value="Main Course"></property>
+			<property name="freeDelivery" value="true"></property>
+			<property name="imageURL"
+				value="https://media.gettyimages.com/photos/ham-swiss-and-arugula-sandwich-picture-id846067582?s=2048x2048"></property>
+		</bean>
+		
+		<bean id="item2" class="com.cognizant.truyum.model.MenuItem">
+			<property name="id" value="2" />
+			<property name="name" value="Burger" />
+			<property name="price" value="129.00"></property>
+			<property name="active" value="true"></property>
+			<property name="dateOfLaunch">
+				<bean id="dateFormat" class="com.cognizant.truyum.util.DateUtil"
+				factory-method="convertToDate">
+                     <constructor-arg value="2017-12-23 01:00:00"/>
+                </bean>				
+			</property>
+			<property name="category" value="Main Course"></property>
+			<property name="freeDelivery" value="false"></property>
+			<property name="imageURL"
+				value="https://media.gettyimages.com/photos/lamb-greek-burger-picture-id637790866?s=2048x2048">
+				</property>
+		</bean>
+		
+		<bean id="item3" class="com.cognizant.truyum.model.MenuItem">
+			<property name="id" value="3" />
+			<property name="name" value="Pizza" />
+			<property name="price" value="149.00"></property>
+			<property name="active" value="true"></property>
+			<property name="dateOfLaunch">
+				<bean id="dateFormat" class="com.cognizant.truyum.util.DateUtil"
+				factory-method="convertToDate">
+                     <constructor-arg value="2018-08-21 01:00:00"/>
+                </bean>				
+			</property>
+			<property name="category" value="Main Course"></property>
+			<property name="freeDelivery" value="false"></property>
+			<property name="imageURL"
+				value="https://media.gettyimages.com/photos/whats-on-your-pizza-picture-id839988946?s=2048x2048">
+				</property>
+		</bean>
+		
+		<bean id="item4" class="com.cognizant.truyum.model.MenuItem">
+			<property name="id" value="4" />
+			<property name="name" value="French Fries" />
+			<property name="price" value="57.00"></property>
+			<property name="active" value="false"></property>
+			<property name="dateOfLaunch">
+				<bean id="dateFormat" class="com.cognizant.truyum.util.DateUtil"
+				factory-method="convertToDate">
+                     <constructor-arg value="2017-07-02 01:00:00"/>
+                </bean>				
+			</property>
+			<property name="category" value="Starters"></property>
+			<property name="freeDelivery" value="true"></property>
+			<property name="imageURL"
+				value="https://media.gettyimages.com/photos/basket-of-french-fries-picture-id614420426?s=2048x2048">
+				</property>
+		</bean>
+		
+		<bean id="item5" class="com.cognizant.truyum.model.MenuItem">
+			<property name="id" value="5" />
+			<property name="name" value="Chocolate Brownie" />
+			<property name="price" value="32.00"></property>
+			<property name="active" value="true"></property>
+			<property name="dateOfLaunch">
+				<bean id="dateFormat" class="com.cognizant.truyum.util.DateUtil"
+				factory-method="convertToDate">
+                     <constructor-arg value="2022-11-02 01:00:00"/>
+                </bean>				
+			</property>
+			<property name="category" value="Dessert"></property>
+			<property name="freeDelivery" value="true"></property>
+			<property name="imageURL"
+				value="https://media.gettyimages.com/photos/homemade-chocolate-brownies-shot-from-above-picture-id1130692246?s=2048x2048">
+				</property>
+		</bean>
+		
+        
+        <bean id="menuItemList" class="java.util.ArrayList">
+			<constructor-arg>
+				<list>
+					<ref bean="item1"></ref>
+					<ref bean="item2"></ref>
+					<ref bean="item3"></ref>
+					<ref bean="item4"></ref>
+					<ref bean="item5"></ref>
+				</list>
+			</constructor-arg>
+		</bean>
+		</beans>
